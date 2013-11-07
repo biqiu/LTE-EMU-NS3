@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LteSimulatorConfig>
+    <SenderConfig senderIp="202.117.15.91" senderGateway="202.117.15.1" senderMask = "255.255.255.0"/>
+	<ReceiverConfig receiverIp="202.117.10.89" receiverGateway="202.117.10.1" receiverMask = "255.255.255.0"/>
+	<UeConfig distance = "0.0" velocity = "0.0" />
+    <SimulatorStopTime stopTime="100.0"/>
+</LteSimulatorConfig>

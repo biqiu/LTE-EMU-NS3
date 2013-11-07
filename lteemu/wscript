@@ -1,0 +1,19 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+
+    module = bld.create_ns3_module('lteemu', ['core', 'network', 'spectrum', 'stats', 'buildings', 'virtual-net-device','point-to-point','applications','internet','csma'])
+    module.source = [        
+        'helper/my-lte-helper.cc',        
+        'helper/my-epc-helper.cc',       
+        'model/my-epc-sgw-pgw-application.cc',       
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'lteemu'
+    headers.source = [       
+        'helper/my-lte-helper.h',        
+        'helper/my-epc-helper.h',       
+        'model/my-epc-sgw-pgw-application.h',        
+        ]
+    bld.ns3_python_bindings()

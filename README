@@ -1,0 +1,17 @@
+NS3 lteemu module by Du
+Author:
+1.ns3 Version: ns-3.18
+2.Before use this module, you should do according to the following progress:
+	1) Unpack the lteemu.zip file 
+	2) Make sure that the folder "lteemu" has been correctly unpacked 
+	3) Move the lte-epc-emu-route.cc to ns-3.18/scratch/
+	4) Move the folder "Config" to ns-3.18/scratch/subdir/
+	5) Move the folder "lteemu" to ns-3.18/src/
+	6) ./waf configure --enable-examples
+	7) ./waf build
+	8) ./waf --run lte-epc-emu-route
+3.If you hope to configure your own sender and receiver, you can modify the ns-3.18/scratch/subdir/Config/Config.xml
+
+Warning: Before ./waf configure --enable-examples, make sure you have log in terminal with Administrator; Otherwise, you may met some error.
+
+Have fun!!!
