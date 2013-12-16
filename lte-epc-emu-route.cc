@@ -1,6 +1,6 @@
 #include "ns3/abort.h"
-#include "ns3/lte-helper.h"
-#include "ns3/epc-helper.h"
+#include "ns3/my-lte-helper.h"
+#include "ns3/my-epc-helper.h"
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
 #include "ns3/ipv4-global-routing-helper.h"
@@ -56,8 +56,8 @@ private:
 	string senderMask;
 	string receiverMask;
 	string receiverIp;
-	Ptr<LteHelper> lteHelper;
-	Ptr<EpcHelper> epcHelper;
+	Ptr<MyLteHelper> lteHelper;
+	Ptr<MyEpcHelper> epcHelper;
 	Ptr<Node> pgw;	
 	NetDeviceContainer internetDevices;
 	Ipv4StaticRoutingHelper ipv4RoutingHelper;
@@ -229,8 +229,8 @@ void LteEpcEmu::ReadSimulatorConfig(xmlNodePtr pRoot)
 	
 bool LteEpcEmu::CreatePgw()
 {
-	lteHelper = CreateObject<LteHelper> ();
-  	epcHelper = CreateObject<EpcHelper> ();
+	lteHelper = CreateObject<MyLteHelper> ();
+  	epcHelper = CreateObject<MyEpcHelper> ();
   	lteHelper->SetEpcHelper (epcHelper);
 	pgw = epcHelper->GetPgwNode ();	
 	AddEmu(pgw,senderGateway, senderMask);//add EMU for pgw and assign IP Address
